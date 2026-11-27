@@ -2929,6 +2929,13 @@ class TestPreparingURLs:
         assert requests.codes.loop_detected == 508
         assert requests.codes.get("LOOP_DETECTED") == 508
 
+    def test_status_code_103_early_hints(self):
+        assert requests.codes.early_hints == 103
+        assert requests.codes.checkpoint == 103
+        assert requests.codes.EARLY_HINTS == 103
+        assert requests.codes.processing == 102
+
+
     def test_different_connection_pool_for_tls_settings_verify_True(self):
         def response_handler(sock):
             consume_socket_content(sock, timeout=0.5)

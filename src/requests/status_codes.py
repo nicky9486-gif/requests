@@ -24,8 +24,9 @@ _codes = {
     # Informational.
     100: ("continue",),
     101: ("switching_protocols",),
+    # "early-hints" on 102 is a legacy mistake; to be removed in 3.0
     102: ("processing", "early-hints"),
-    103: ("checkpoint",),
+    103: ("checkpoint", "early_hints"),
     122: ("uri_too_long", "request_uri_too_long"),
     200: ("ok", "okay", "all_ok", "all_okay", "all_good", "\\o/", "✓"),
     201: ("created",),
