@@ -2924,6 +2924,10 @@ class TestPreparingURLs:
         assert r4 == 425
         assert r5 == 425
         assert r6 == 425
+    
+    def test_status_code_508(self):
+        assert requests.codes.loop_detected == 508
+        assert requests.codes.get("LOOP_DETECTED") == 508
 
     def test_different_connection_pool_for_tls_settings_verify_True(self):
         def response_handler(sock):
